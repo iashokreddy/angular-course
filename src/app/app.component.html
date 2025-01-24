@@ -4,6 +4,26 @@
     src="https://angular-academy.s3.amazonaws.com/main-logo/main-page-logo-small-hat.png"
   />
 </div>
+<!-- with this command we can easiy migrate to latest versions: ng generate @angular/core:control-flow -->
+<div class="courses">
+  <course-card
+    *ngFor="
+      let course of courses;
+      index as i;
+      first as isFirst;
+      last as isLast;
+      odd as isOdd;
+      even as isEven
+    "
+    [class.is-first]="isFirst"
+    [class.is-last]="isLast"
+    [class.is-odd]="isOdd"
+    [class.is-even]="isEven"
+    (courseSelected)="onCardSelected($event)"
+    [course]="course"
+    [cardIndex]
+  ></course-card>
+</div>
 
 <div class="courses">
   @for (course of courses; track trackCourse;) {
