@@ -9,7 +9,7 @@ import { Course } from "./model/course";
   standalone: false,
 })
 export class AppComponent {
-  courses = COURSES;
+  courses = [...COURSES];
 
   $emit: Course;
 
