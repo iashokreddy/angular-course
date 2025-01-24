@@ -16,4 +16,7 @@ export class AppComponent {
   onCardSelected(course: Course) {
     console.log("Card Click", course);
   }
+  trackCourse(index: number, course: Course) {
+    return course.id;
+  }
 }
