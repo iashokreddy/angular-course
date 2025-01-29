@@ -12,6 +12,9 @@ export class AppComponent {
   courses = [...COURSES];
 
   $emit: Course;
+  title: string = "Ashok Reddy INDLA";
+  price: number = 999.990454;
+  rate: 0.67;
 
   onCardSelected(course: Course) {
     console.log("Card Click", course);

@@ -14,6 +14,7 @@ course-card {
 .course-card .course-title {
   font-size: 27px;
   font-weight: bold;
+  color: #1ee510;
 }
 
 .course-card .course-description {
@@ -21,6 +22,7 @@ course-card {
   margin: 0 auto;
   margin-top: 15px;
   user-select: none;
+  color: #ffff;
 }
 
 .course-card img {
@@ -58,6 +60,7 @@ course-card.is-odd {
 
 .course-category {
   margin-top: 15px;
+  color: cyan !important;
 }
 
 .category {
@@ -84,4 +87,8 @@ course-card.is-odd {
 .highlighted {
   box-shadow: 0 2px 16px 0 #de1e19, 0 3px 8px 0 rgba(226, 21, 19, 0.47),
     0 6px 8px -1px #b41c18;
+}
+
+.course-card.beginner {
+  background-color: lightsalmon;
 }

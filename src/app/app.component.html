@@ -4,8 +4,11 @@
     src="https://angular-academy.s3.amazonaws.com/main-logo/main-page-logo-small-hat.png"
   />
 </div>
+
 <!-- with this command we can easiy migrate to latest versions: ng generate @angular/core:control-flow -->
 <div class="courses">
+  <!-- 3.3-5 represents length left and right side of dot -->
+  <div>{{title | titlecase}} - Price {{price | number: '3.3-5' }} - Percentage: {{rate | percent}}</div> 
   <course-card
     *ngFor="
       let course of courses;
@@ -21,7 +24,7 @@
     [class.is-even]="isEven"
     (courseSelected)="onCardSelected($event)"
     [course]="course"
-    [cardIndex]
+    [cardIndex]="i"
   ></course-card>
 </div>
 
