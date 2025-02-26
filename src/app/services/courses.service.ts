@@ -3,11 +3,7 @@ import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { Course } from "../model/course";
 
-@Injectable({
-  providedIn: 'root',
-  useFactory: (http) => new CoursesService(http),
-  deps: [HttpClient]
-})
+@Injectable()
 export class CoursesService {
   constructor(private http: HttpClient) {}
 
