@@ -10,7 +10,7 @@ This course repository is updated to Angular v19:
 
 # Installation pre-requisites
 
-IMPORTANT: Please use Node 18 LTS (Long Term Support version). 
+IMPORTANT: Please use Node 18 (Long Term Support version). Note that Node 18 is not yet officially supported by the Angular CLI.
 
 # Installing the Angular CLI
 
