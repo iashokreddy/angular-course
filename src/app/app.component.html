@@ -1,46 +1,26 @@
 <div class="top-menu">
-  <img
-    class="logo"
-    src="https://angular-academy.s3.amazonaws.com/main-logo/main-page-logo-small-hat.png"
-  />
+
+  <img class="logo"
+       src="https://angular-academy.s3.amazonaws.com/main-logo/main-page-logo-small-hat.png">
+
 </div>
 
-<!-- with this command we can easiy migrate to latest versions: ng generate @angular/core:control-flow -->
-<div class="courses">
-  <!-- 3.3-5 represents length left and right side of dot -->
-  <div>{{title | titlecase}} - Price {{price | number: '3.3-5' }} - Percentage: {{rate | percent}}</div> 
-  <course-card
-    *ngFor="
-      let course of courses;
-      index as i;
-      first as isFirst;
-      last as isLast;
-      odd as isOdd;
-      even as isEven
-    "
-    [class.is-first]="isFirst"
-    [class.is-last]="isLast"
-    [class.is-odd]="isOdd"
-    [class.is-even]="isEven"
-    (courseSelected)="onCardSelected($event)"
-    [course]="course"
-    [cardIndex]="i"
-  ></course-card>
+<div>
+
+  <div class="courses" *ngIf="courses$ | async as courses">
+
+    <course-card *ngFor="let course of courses"
+                 [course]="course">
+
+      <course-image [src]="course.iconUrl"></course-image>
+
+    </course-card>
+
+  </div>
+
+
 </div>
 
-<div class="courses">
-  @for (course of courses; track trackCourse;) {
-  <course-card
-    (courseSelected)="onCardSelected($event)"
-    [course]="course"
-    [index]="$index"
-    [count]="$count"
-    [class.is-first]="$first"
-    [class.is-last]="$last"
-    [class.is-odd]="$odd"
-    [class.is-even]="$even"
-  />
-  } @empty {
-  <h1>No Courses Found!</h1>
-  }
-</div>
+
+
+
