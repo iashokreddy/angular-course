@@ -12,6 +12,7 @@ import { Course } from "./model/course";
 import { CourseCardComponent } from "./course-card/course-card.component";
 import { HighlightedDirective } from "./directives/highlighted.directive";
 import { Observable } from "rxjs";
+import { HttpClient, HttpParams } from "@angular/common/http";
 
 @Component({
   selector: "app-root",
@@ -20,9 +21,18 @@ import { Observable } from "rxjs";
   standalone: false,
 })
 export class AppComponent implements OnInit {
-  courses = COURSES;
+  courses$: Observable<Course[]>;
 
-  constructor() {}
+  // courses;
 
-  ngOnInit() {}
+  // HttpClient angular service
+  constructor(private http: HttpClient) {}
+
+  // useEffect for initial render to fetch data
+  ngOnInit() {
+    const params = new HttpParams().set("page", "1").set("pageSize", "10");
+
+    this.courses$ = this.http.get<Course[]>("/api/courses", { params }); // get data based on params
+    // this.courses$.subscribe((courses) => (this.courses = courses)); // courses assigned to api response
+  }
 }
